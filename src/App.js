@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import rocket from "./assets/rocket.svg";
+import Countdown from "react-countdown";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <body>
+        <div className="container">
+          <div className="cronometro">
+            <h1>READY TO LAUNCH IN...</h1>
+            
+            <div className="contagem-regressiva">
+
+            <div className="horas">
+              <p>Dias</p>
+              <p>Horas</p>
+              <p>Minutos</p>
+              <p>Segundos</p>
+            </div>
+
+              <Countdown
+                className="countdown"
+                date={Date.now() + 700000000 }
+                zeroPadTime={Boolean.TRUE}
+                autoStart={true}
+              />
+            </div>
+
+            <div className='button-div'>
+              <p>Inscreva-se para saber mais sobre o lançamento</p>
+              <button>Inscreva-se</button>
+            </div>
+
+          </div>
+
+          <div className="imagem">
+            <img src={rocket} alt="rocket" />
+          </div>
+        </div>
+      </body>
     </div>
   );
 }
